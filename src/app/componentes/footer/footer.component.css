@@ -1,0 +1,11 @@
+footer{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+p{
+    font-size: 14px;
+    font-weight:normal;
+}
+

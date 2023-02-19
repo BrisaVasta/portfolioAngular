@@ -1,0 +1,43 @@
+
+<div class="container-fluid"> 
+    <div class="row"> <!--fila --> 
+        <div class="col-4  " > <!-- logo-->
+            <p> <img src="/assets/logoArg.png"alt="logoArg" class="logo">
+                <i class="nombrePrograma" > Argentina Programa - #YoProgramo.</i> </p>
+        </div> 
+
+        
+        <div class="col-3 ">
+          <nav id="navbar-example2" class="navbar navbar-expand-xxl  " >
+            <ul class="nav nav-pills collapse navbar-collapse" id="btnNavegacion">
+              <li class="nav-item"> 
+                <a class="nav-link" routerLinkActive="active" routerLink="/inicio">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/acerca-de-mi">Acerca de mi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active"  routerLink="/proyectos">Proyectos</a>
+              </li>
+            </ul>
+
+                <button class="navbar-toggler navbar-dark bg-dark " type="button" data-bs-toggle="collapse" data-bs-target="#btnNavegacion" >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+          </nav>
+        </div>
+        
+        <div class="col-2 redes  " > <!-- redesSociales-->
+                <a href="https://www.linkedin.com/in/brisa-vasta/" target="_blank"> <i class='bx bxl-linkedin-square' style='color:#353434' ></i></a>
+                <a href="https://github.com/BrisaVasta" target="_blank" style="padding-left: 20px;"> <i class='bx bxl-github' style="font-size:24px; color: #353434;"> </i></a>
+        </div>
+        <div class="col-3 login  nav-pills nav-item"> <!-- boton login-->
+          <button  class="btn btn-outline-dark"  *ngIf="uLogged==''" (click)="login()"> Iniciar sesion<i  class='bx bxs-pencil bx-tada' ></i>  </button> 
+          <button  class="btn btn-outline-dark"  *ngIf="uLogged!==''" (click)="salir()" style="background-color: #896dde; color: white;"> Cerrar sesion </button> 
+
+        </div>
+       
+    </div>
+</div>
+

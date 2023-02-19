@@ -1,0 +1,35 @@
+<section class="vh-100 editar">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-5 mt-md-4 pb-5">
+  
+                  <h2 class="fw-bold mb-2 text-uppercase" style="color:white">Editar proyecto</h2>
+                  
+                  <div class="form-floating mb-3">
+                    <input class="form-control" placeholder="nombreProyecto" [(ngModel)] ="proyec.titulo" >
+                    <label >Nombre del proyecto</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input  class="form-control"  placeholder="Año de fin" [(ngModel)] ="proyec.anioFin">
+                    <label >Año de fin</label>
+                  </div>
+                  
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Descripción" [(ngModel)] ="proyec.descripcion"></textarea>
+                    <label for="floatingTextarea">Descripción</label>
+                  </div>
+
+                    <button type="button" class="btn btn-secondary" routerLink='' >Cancelar</button>
+                    <button type="button" class="btn btn-primary" (click)="editarProyecto()" >Guardar</button>
+        
+              </div>
+    
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

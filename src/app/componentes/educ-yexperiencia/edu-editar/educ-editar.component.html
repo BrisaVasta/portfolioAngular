@@ -1,0 +1,43 @@
+<section class="vh-100 editar">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+                <h2 class="fw-bold mb-2 text-uppercase" style="color:white">Editar Educacion</h2>
+                
+                  <div class="form-floating mb-3">
+                    <input  class="form-control"  placeholder="titulo" [(ngModel)]="educ.titulo"  >
+                    <label >Titulo</label>
+                  </div>
+                    <div class="form-floating mb-3">
+                      <input  class="form-control"  placeholder="Año de inicio" [(ngModel)]="educ.anioIni"  >
+                      <label >Año de inicio </label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input  class="form-control"  placeholder="Año de fin " [(ngModel)]="educ.anioFin" >
+                      <label >Año de fin</label>
+                    </div>
+                  <div class="form-floating mb-3">
+                    <input  class="form-control"  placeholder="Institución" [(ngModel)]="educ.institucionEduc" >
+                    <label >Institución educativa</label>
+                  </div>
+                  
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Descripción" id="floatingTextarea" [(ngModel)]="educ.descripcion" ></textarea>
+                    <label >Descripción</label>
+                  </div>
+
+                  <button type="button" class="btn btn-secondary" routerLink='' >Cancelar</button>
+                  <button type="button" class="btn btn-primary" (click)="editarEduc()" >Guardar</button>
+      
+            </div>
+  
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

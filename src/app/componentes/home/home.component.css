@@ -1,0 +1,35 @@
+/* 1 columna para smartphones */
+.imagenJaz {
+
+    max-width: 100%;
+    display: inline-block;
+}
+
+/* 2 columnas para tablets */
+@media (min-width: 420px) {
+    imagenJaz {
+        max-width: 48%;
+    }
+}
+
+/* 4 columnas para grandes dispositivos*/
+@media (min-width: 760px) {
+    imagenJaz {
+        max-width: 24%;
+    }
+}
+
+
+.nombreTitulo{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 0px;
+ 
+}

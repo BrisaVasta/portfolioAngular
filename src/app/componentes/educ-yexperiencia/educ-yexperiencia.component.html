@@ -1,0 +1,110 @@
+<div class="container-fluid row"  >  
+       <div  class="col-lg-5">
+        <ul style="padding:60px 0px 0px 60px"> 
+          <h3 class="resume-title">Educación    <button class="btn bx bx-message-square-add" style='font-size: 30px;'  data-bs-toggle="modal" data-bs-target="#modalEducAgregar" *ngIf="uLogged!==''" ></button></h3>
+          <li *ngFor="let educ of educList"  style="margin-left:40px ; margin-bottom: 40px;">
+            <h4 class="resaltado">{{educ.titulo | uppercase }}   <button class="btn bx bxs-pencil bx-tada"  *ngIf="uLogged!==''" routerLink="/editarEducacion/{{educ.id}}"></button> <button type="button" class="btn-close" aria-label="Close" *ngIf="uLogged!==''" (click)="eliminarEdu(educ)"></button>  </h4>
+            <h5 class="años">{{educ.anioIni}}<em *ngIf="educ.anioFin"> - </em>{{educ.anioFin}}</h5>
+            <p><em>{{educ.institucionEduc}}</em> </p>
+            <p>{{educ.descripcion}}</p>
+            
+          </li>
+        </ul>
+      </div>
+       
+
+     <div class="col-lg-5" >
+             <ul style="padding:60px 0px 0px 60px; " >
+              <h3 class="resume-title"  >Experiencia Laboral   <button class="btn bx bx-message-square-add" style='font-size: 30px;'   data-bs-toggle="modal" data-bs-target="#modalExpAgregar" *ngIf="uLogged!==''" ></button></h3>
+                <li *ngFor="let exp of expList" style="margin-left:40px ; margin-bottom: 40px;">
+                  <h4 class="resaltado">{{exp.puesto | uppercase }}   <button class="btn bx bxs-pencil bx-tada"  *ngIf="uLogged!==''" routerLink="/editarExperiencia/{{exp.id}}"> </button>  <button type="button" class="btn-close" aria-label="Close" *ngIf="uLogged!==''" (click)="eliminarExp(exp)"></button>  </h4>
+                  <h5 class="años">{{exp.anioIni}}<em *ngIf="exp.anioFin"> - </em>{{exp.anioFin}}</h5>
+                  <p><em>{{exp.empresa}} </em></p>
+                  <p>{{exp.descripcion}} </p>
+                </li>
+             </ul>
+      </div>
+
+        <!-- formulario para agregar educacion -->
+      <div class="modal fade" id="modalEducAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar educación</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div >
+                <div class="form-floating mb-3">
+                  <input  class="form-control"  placeholder="titulo" [(ngModel)]="titulo" >
+                  <label >Titulo</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input  class="form-control"  placeholder="Año de inicio" [(ngModel)]="anioIni">
+                  <label >Año de inicio</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input  class="form-control"  placeholder="Año de fin" [(ngModel)]="anioFin">
+                  <label >Año de fin</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input  class="form-control"  placeholder="Institución" [(ngModel)]="institucionEduc">
+                  <label >Institución educativa</label>
+                </div>
+                
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Descripción" id="floatingTextarea" [(ngModel)]="descripcion"></textarea>
+                  <label >Descripción</label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancelar</button>
+              <button type="button" class="btn btn-primary" (click)="agregarEdu()">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+        <!-- formulario para agregar un experiencia laboral -->
+      <div class="modal fade" id="modalExpAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar experiencia laboral</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div >
+                <div class="form-floating mb-3">
+                  <input  class="form-control" placeholder="titulo" [(ngModel)]="puesto">
+                  <label >Puesto</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input  class="form-control"  placeholder="Año de inicio" [(ngModel)]="anioIni">
+                  <label >Año de inicio</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input  class="form-control"  placeholder="Año de fin" [(ngModel)]="anioFin">
+                  <label >Año de fin</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input class="form-control"  placeholder="empresa" [(ngModel)]="empresa">
+                  <label >Empresa o lugar de trabajo</label>
+                </div>
+                
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Descripción" id="floatingTextarea" [(ngModel)]="descripcion"></textarea>
+                  <label for="floatingTextarea">Descripción</label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" (click)="agregarExp()">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+  </div>

@@ -1,0 +1,49 @@
+<div col-lg-5 style="padding-left:80px;">
+  <ul>
+    <h3 > Skills <button class="btn bx bx-message-square-add" style='font-size: 30px;'
+        data-bs-toggle="modal" data-bs-target="#modalSkills" *ngIf="uLogged!==''"></button></h3>
+    <li *ngFor="let skill of skillData" class="skills">
+      <span> {{skill.nombre}}
+        <button class="btn bx bxs-pencil bx-tada" style="font-size: 20px;" routerLink="/editarSkill/{{skill.id}}"
+          *ngIf="uLogged!==''"> </button>
+        <button type="button" class="btn-close" aria-label="Close" style="font-size: 15px;" *ngIf="uLogged!==''"
+          (click)="eliminar(skill)"></button> </span>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+          aria-label="Animated striped example" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"
+          style="width: 10% ;background-color: #896dde;" [ngStyle]="{'width.%':skill.porcentaje}"></div>
+      </div>
+    </li>
+
+
+  </ul>
+</div>
+
+
+<div class="modal fade" id="modalSkills" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Skill</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="form-floating mb-3">
+            <input class="form-control" placeholder="Nombre" [(ngModel)]="nombre">
+            <label class="form-label">Nombre</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input class="form-control" placeholder="Porcentaje" [(ngModel)]="porcentaje">
+            <label>Porcentaje</label>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="agregarSkill()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

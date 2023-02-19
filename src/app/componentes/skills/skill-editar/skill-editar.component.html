@@ -1,0 +1,30 @@
+<section class="vh-100 editar">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-5 mt-md-4 pb-5">
+  
+                  <h2 class="fw-bold mb-2 text-uppercase" style="color:white">Editar skill</h2>
+                  
+                  <div class="form-floating mb-3">
+                    <input  class="form-control" placeholder="Nombre"  [(ngModel)] ="skill.nombre">
+                    <label class="form-label">Nombre</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input  class="form-control"  placeholder="Porcentaje"  [(ngModel)] ="skill.porcentaje">
+                    <label>Porcentaje</label>
+                  </div>
+
+                    <button type="button" class="btn btn-secondary" routerLink='' >Cancelar</button>
+                    <button type="button" class="btn btn-primary" (click)="editarSkill()" >Guardar</button>
+        
+              </div>
+    
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

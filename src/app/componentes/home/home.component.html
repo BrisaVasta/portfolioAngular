@@ -1,0 +1,15 @@
+<app-barra-nav></app-barra-nav>
+<section id="banner"  *ngIf="miInfo!==null" >
+    <img  [src]="miInfo.urlBanner" class="imagenJaz" width="960" height="700" >   
+    <div class="nombreTitulo">
+          <h1 style=" font-family: 'Satisfy', cursive; font-size: 60px ; color: #ffffff " >{{miInfo.nombre}}</h1>
+          <h3 style="font-size: 20px; color: #ffffff;">{{miInfo.titulo}}</h3>
+    </div>
+</section>
+<app-acerca-de-mi></app-acerca-de-mi>
+<app-skills></app-skills>
+<app-proyectos></app-proyectos>
+<app-footer></app-footer>
+
+
+

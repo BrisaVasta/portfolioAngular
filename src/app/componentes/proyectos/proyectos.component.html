@@ -1,0 +1,48 @@
+
+<div class="proyect">
+    <h3>Proyectos   
+      <button class="btn bx bx-message-square-add" style="font-size: 30px;" data-bs-toggle="modal" data-bs-target="#modalProyectos"  *ngIf="uLogged!==''"></button></h3>
+    <ul style="margin-left:10px ; margin-bottom: 40px;">
+      <li *ngFor="let proyect of proyectosList">
+        <h4 class="resaltado">{{proyect.titulo | uppercase}} 
+          <button class=' btn bx bxs-pencil bx-tada ' *ngIf="uLogged!==''"  routerLink="/editarProyecto/{{proyect.id}}"></button> 
+          <button type="button" class="btn-close" aria-label="Close"*ngIf="uLogged!==''"  (click)="eliminar(proyect)" ></button>  </h4>
+        <h5 class="años">{{proyect.anioFin}}</h5>
+        <p> {{proyect.descripcion}}</p>
+      </li>
+    </ul>
+
+  <!-- formulario para agregar un proyecto -->
+    <div class="modal fade" id="modalProyectos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar proyecto</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <DIV >
+              <div class="form-floating mb-3">
+                <input class="form-control" placeholder="nombreProyecto" [(ngModel)] ="titulo" >
+                <label >Nombre del proyecto</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input  class="form-control"  placeholder="Año de fin" [(ngModel)]="anioFin">
+                <label >Año de fin</label>
+              </div>
+              
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="Descripción" [(ngModel)] ="descripcion"></textarea>
+                <label for="floatingTextarea">Descripción</label>
+              </div>
+            </DIV>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="agregarProyecto()">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+ 

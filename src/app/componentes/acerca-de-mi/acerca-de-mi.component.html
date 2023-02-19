@@ -1,0 +1,88 @@
+<div class="container">
+      <div class="acercaDeMi"  >
+        <h2 style="text-align:center;  padding: 30px 0px 30px 0px;">Acerca de mí    
+          <button class=" btn bx bxs-pencil bx-tada" data-bs-toggle="modal" data-bs-target="#modalAcercadeMiEditar" *ngIf="uLogged!=='' && miInfo!==null"> </button>  </h2>
+       
+      
+        <div class="row"  *ngIf="miInfo!==null"> 
+          <div class="col-lg-3 "> 
+              <img [src]="miInfo.urlPerfil" alt="fotoPerfil" class="miFoto">
+          </div>
+          
+          <div class="col-sm-4">
+            <ul class="item">
+              <li ><i class='bx bxs-chevron-right resaltado' ></i> <strong>Nombre: </strong> <span> {{miInfo.nombre}}</span></li>
+              <li><i class='bx bxs-chevron-right resaltado' ></i> <strong>Celular: </strong> <span>{{miInfo.telefono}}</span></li>
+              <li> <i class='bx bxs-chevron-right resaltado' ></i> <strong>Email: </strong> <span>{{miInfo.email}}</span></li>
+            
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <ul class="item">
+              <li> <i class='bx bxs-chevron-right resaltado' ></i> <strong>Edad: </strong> <span>{{miInfo.edad}}</span></li>
+              <li><i class='bx bxs-chevron-right resaltado' ></i> <strong>Ciudad: </strong> <span>{{miInfo.ciudad}}</span></li>
+            </ul>
+          </div>
+        </div> 
+      </div>
+
+    <!-- formulario para editar la persona existente -->
+    <div class="modal fade" id="modalAcercadeMiEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar datos</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div >
+              <div class="form-floating mb-3">
+                <input  class="form-control" placeholder="Nombre"  [(ngModel)] ="miInfo.nombre" value="{{miInfo.nombre}}">
+                <label class="form-label">Nombre</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input  class="form-control"  placeholder="Titulo"  [(ngModel)] ="miInfo.titulo" value="{{miInfo.titulo}}">
+                <label>Titulo</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input class="form-control"  placeholder="Celular"  [(ngModel)] ="miInfo.telefono" value="{{miInfo.telefono}}">
+                <label >Celular</label>
+              </div>
+              
+              <div class="form-floating mb-3">
+                <input  class="form-control"  placeholder="Ciudad"  [(ngModel)] ="miInfo.ciudad" value="{{miInfo.ciudad}}">
+                <label >Ciudad</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input  class="form-control"  placeholder="Edad"  [(ngModel)] ="miInfo.edad" value="{{miInfo.edad}}">
+                <label >Edad</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input  class="form-control"  placeholder="Email" [(ngModel)] ="miInfo.email" value="{{miInfo.email}}">
+                <label>Email</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input class="form-control"  placeholder="Url Foto" [(ngModel)] ="miInfo.urlPerfil" value="{{miInfo.urlPerfil}}">
+                <label >Url de su foto de perfil</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input class="form-control"  placeholder="Url Banner" [(ngModel)] ="miInfo.urlBanner" value="{{miInfo.urlBanner}}">
+                <label >Url del Banner</label>  
+              </div>
+            </div>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="editarInfo()"  >Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+       
+</div>
+<app-educ-yexperiencia></app-educ-yexperiencia>
